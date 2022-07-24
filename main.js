@@ -21,7 +21,7 @@ function gotResult(error , results){
   if((results[0].confidence  > 0.5) && (previous_result != results[0].label)){
     console.log(results);
     previous_result = results[0].label;
-    var synth = window.SpeechSynthesis;
+    var synth = window.speechSynthesis;
     speak_data = "Object is - " + results[0].label;
     var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis);
